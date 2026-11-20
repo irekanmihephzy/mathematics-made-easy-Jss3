@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f6f7f4">
+  <meta name="description" content="Practise JSS3 mathematics with worked solutions, topic filters and original BECE-style revision questions.">
+  <title>Maths Made Easy — JSS3 Practice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#" aria-label="Maths Made Easy home">
+        <span class="brand-mark" aria-hidden="true">∑</span>
+        <span class="brand-copy"><strong>maths made</strong><strong>easy<span>.</span></strong></span>
+      </a>
+      <div class="sidebar-label">YOUR CLASSROOM</div>
+      <nav class="main-nav">
+        <a class="nav-link active" href="#practice" aria-current="page"><span class="nav-icon">▦</span> Practice questions</a>
+        <a class="nav-link" href="#topics"><span class="nav-icon">◈</span> Browse topics</a>
+        <a class="nav-link" href="#progress"><span class="nav-icon">↗</span> My progress</a>
+      </nav>
+      <div class="sidebar-note">
+        <div class="note-icon">✳</div>
+        <strong>Small steps add up.</strong>
+        <p>Keep practising a little every day. You’re doing better than you think.</p>
+        <span class="note-doodle" aria-hidden="true">＋ × ÷</span>
+      </div>
+      <div class="sidebar-footer">
+        <span class="online-dot"></span>
+        Ready when you are
+      </div>
+    </aside>
+
+    <main class="main-content" id="practice">
+      <header class="topbar">
+        <div class="breadcrumb">JSS3 <span>/</span> Mathematics</div>
+        <div class="topbar-right">
+          <div class="streak"><span aria-hidden="true">✦</span> <strong id="streak-count">0</strong> questions answered</div>
+          <div class="avatar" aria-label="Student">S</div>
+        </div>
+      </header>
+
+      <section class="welcome">
+        <div class="welcome-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR REVISION SPACE</div>
+          <h1>Maths gets easier<br>with <span>practice.</span></h1>
+          <p>Build confidence one question at a time. Pick a topic, give it a go, and learn from every answer.</p>
+          <a class="primary-button" href="#question-list">Let’s practise <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="welcome-art" aria-hidden="true">
+          <div class="art-sun"></div>
+          <div class="art-card">
+            <span class="art-card-label">TODAY’S REMINDER</span>
+            <span class="art-equation">x + 5 = 12</span>
+            <span class="art-answer">You’ve got this <b>✳</b></span>
+          </div>
+          <span class="art-spark spark-one">✳</span>
+          <span class="art-spark spark-two">+</span>
+          <span class="art-spark spark-three">÷</span>
+          <span class="art-circle"></span>
+        </div>
+      </section>
+
+      <section class="stats-row" id="progress" aria-label="Your progress">
+        <article class="stat-card">
+          <div class="stat-icon mint">✓</div>
+          <div><span class="stat-label">Questions answered</span><strong id="answered-stat">0</strong></div>
+          <span class="stat-caption">Keep it going</span>
+        </article>
+        <article class="stat-card">
+          <div class="stat-icon lilac">◎</div>
+          <div><span class="stat-label">Correct answers</span><strong id="correct-stat">0</strong></div>
+          <span class="stat-caption">Every one counts</span>
+        </article>
+        <article class="stat-card progress-stat">
+          <div class="stat-icon peach">✦</div>
+          <div><span class="stat-label">Practice progress</span><strong id="progress-label">0%</strong></div>
+          <div class="mini-progress"><span id="progress-bar"></span></div>
+        </article>
+      </section>
+
+      <section class="practice-section" id="topics">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow">THE QUESTION BANK</div>
+            <h2>Find your next <span>challenge.</span></h2>
+          </div>
+          <label class="search-box">
+            <span aria-hidden="true">⌕</span>
+            <input id="search-input" type="search" placeholder="Search questions..." aria-label="Search questions">
+            <kbd>/</kbd>
+          </label>
+        </div>
+
+        <div class="filters" aria-label="Question filters">
+          <div class="topic-filters" id="topic-filters" role="group" aria-label="Filter by topic"></div>
+          <label class="year-select-wrap">
+            <span class="sr-only">Filter by practice set</span>
+            <select id="year-filter" aria-label="Filter by practice set">
+              <option value="all">All practice sets</option>
+              <option value="2022">2022 practice</option>
+              <option value="2023">2023 practice</option>
+              <option value="2024">2024 practice</option>
+              <option value="2025">2025 practice</option>
+              <option value="2026">2026 practice</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="question-summary">
+          <span id="results-count">Showing all questions</span>
+          <span class="original-label"><span>✦</span> Original BECE-style practice · not official past papers</span>
+        </div>
+        <div class="question-list" id="question-list" aria-live="polite"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <span>∅</span>
+          <h3>No questions found</h3>
+          <p>Try a different topic or search term.</p>
+          <button class="text-button" id="clear-filters">Clear filters</button>
+        </div>
+        <div class="end-note"><span>✳</span> You’re making progress just by showing up.</div>
+      </section>
+
+      <footer class="page-footer">
+        <span>Made for curious minds.</span>
+        <span>JSS3 Mathematics · Practice at your own pace</span>
+      </footer>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
